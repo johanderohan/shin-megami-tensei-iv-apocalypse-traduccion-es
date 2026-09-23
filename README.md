@@ -34,7 +34,7 @@ La traducción y la revisión editorial se han realizado con asistencia de model
 ## Descarga
 
 1. **LayeredFS — primera opción:** [shinivapoc-es-v1.0.zip](https://github.com/johanderohan/shin-megami-tensei-iv-apocalypse-traduccion-es/releases/download/v1.0/shinivapoc-es-v1.0.zip), para Luma3DS o Azahar.
-2. **XDELTA — alternativa:** [shinivapoc-es-v1.0.xdelta](https://github.com/johanderohan/shin-megami-tensei-iv-apocalypse-traduccion-es/releases/download/v1.0/shinivapoc-es-v1.0.xdelta), para crear una ROM `.3ds` ya traducida.
+2. **XDELTA — alternativa:** [shinivapoc-rom-es-v1.0.xdelta](https://github.com/johanderohan/shin-megami-tensei-iv-apocalypse-traduccion-es/releases/download/v1.0/shinivapoc-rom-es-v1.0.xdelta), para crear una ROM `.3ds` ya traducida.
 
 Ambos contienen la misma traducción. Elige uno de los dos métodos.
 
@@ -78,7 +78,7 @@ Para LayeredFS, ambas partes, `romfs` y `code.ips`, son necesarias. Retira prime
 2. Aplica el `.xdelta` sobre esa ROM limpia con [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher) o con:
 
 ```sh
-xdelta3 -d -s "Shin Megami Tensei IV - Apocalypse (USA).3ds" shinivapoc-es-v1.0.xdelta "Shin Megami Tensei IV - Apocalypse (ES).3ds"
+xdelta3 -d -s "Shin Megami Tensei IV - Apocalypse (USA).3ds" shinivapoc-rom-es-v1.0.xdelta "Shin Megami Tensei IV - Apocalypse (ES).3ds"
 ```
 
 3. La ROM resultante ocupa **2.147.483.648 bytes** y su SHA-256 debe ser `693c83482860653ba204a65d03fd454bef788676970c9d3afb408ed33e1b066f`.
