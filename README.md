@@ -1,5 +1,7 @@
 # Shin Megami Tensei IV: Apocalypse — Traducción al castellano
 
+Ficha del proyecto, capturas y más traducciones al castellano en **[Parches en Castellano](https://parchesencastellano.com/traducciones/nintendo-3ds/shin-megami-tensei-iv-apocalypse)**.
+
 Traducción al español de España de **Shin Megami Tensei IV: Apocalypse** para Nintendo 3DS, realizada sobre la **edición USA en inglés**.
 
 La primera opción es el parche **LayeredFS**; también hay un **XDELTA** alternativo. Necesitas tu propia copia del juego: ninguna descarga incluye una ROM.
