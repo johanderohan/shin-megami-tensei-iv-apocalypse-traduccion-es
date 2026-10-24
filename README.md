@@ -142,7 +142,7 @@ El menú **Contenido adic.** de la pantalla de título es la tienda de la eShop:
 
 ### Comprobaciones del DLC
 
-- Los 541 archivos que comparte el DLC con la copia de prueba que trae el juego base son idénticos byte a byte; los 153 traducidos son los mismos de la 1.0, ahora dentro del DLC real. Las cadenas que quedan en inglés son nombres propios conservados según la biblia e identificadores internos.
+- Los 626 archivos del DLC son idénticos byte a byte a la copia de prueba que trae el juego base; los 153 traducidos son los mismos de la 1.0, ahora dentro del DLC real. Las cadenas que quedan en inglés son nombres propios conservados según la biblia e identificadores internos.
 - El CIA se reconstruye con hashes de TMD y NCCH correctos; sin cambios, la reconstrucción da un CIA idéntico al original. Cada archivo traducido se ha releído desde el CIA final, y el XDELTA se ha reaplicado y comparado byte a byte.
 - En **Azahar 2126.0**: el CIA se instala, el juego carga el contenido adicional sin errores y, en un estado guardado en la pantalla de título, la memoria contiene los datos traducidos de 96 archivos del DLC (misiones, objetos, datos de misión) y no los originales.
 - **No se ha visto el texto del DLC en pantalla**: hace falta avanzar en la historia, y no se ha jugado hasta ahí. Tampoco se ha probado en consola física.
