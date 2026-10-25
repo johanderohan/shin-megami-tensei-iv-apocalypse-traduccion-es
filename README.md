@@ -8,6 +8,8 @@ La primera opción es el parche **LayeredFS**; también hay un **XDELTA** altern
 
 ## Estado
 
+Versión **1.3**: segundo parche del DLC para quien descifre el CIA con Batch CIA 3DS Decryptor. La traducción no cambia.
+
 Versión **1.2**: el parche del DLC pasa a aplicarse al CIA «piratelegit» del DLC USA, con el ticket correcto. La traducción es la misma de la 1.1 y el juego base no cambia.
 
 Versión **1.1**: añade la traducción del contenido descargable USA. El juego base no cambia respecto a la 1.0.
@@ -44,9 +46,9 @@ La traducción y la revisión editorial se han realizado con asistencia de model
 
 Ambos contienen la misma traducción. Elige uno de los dos métodos.
 
-3. **DLC — opcional, aparte:** [shinivapoc-dlc-es-v1.2.xdelta](https://github.com/johanderohan/shin-megami-tensei-iv-apocalypse-traduccion-es/releases/download/v1.2/shinivapoc-dlc-es-v1.2.xdelta), para crear un CIA del contenido descargable USA ya traducido. Se usa **junto con** el parche del juego base (opción 1 o 2). Instrucciones en [Contenido descargable (DLC)](#contenido-descargable-dlc).
+3. **DLC — opcional, aparte:** un parche según cómo descifres el CIA del DLC: [shinivapoc-dlc-es-v1.3-godmode9.xdelta](https://github.com/johanderohan/shin-megami-tensei-iv-apocalypse-traduccion-es/releases/download/v1.3/shinivapoc-dlc-es-v1.3-godmode9.xdelta) (GodMode9) o [shinivapoc-dlc-es-v1.3-batch.xdelta](https://github.com/johanderohan/shin-megami-tensei-iv-apocalypse-traduccion-es/releases/download/v1.3/shinivapoc-dlc-es-v1.3-batch.xdelta) (Batch CIA 3DS Decryptor). Los dos crean el mismo CIA del contenido descargable USA ya traducido. Se usa **junto con** el parche del juego base (opción 1 o 2). Instrucciones en [Contenido descargable (DLC)](#contenido-descargable-dlc).
 
-SHA-256 del XDELTA del DLC: `03cbd9bd83d16e070273c1124367f17e04c741ba355d682f59eb3ca55cbbd0a3`.
+SHA-256 de los XDELTA del DLC: GodMode9 `03cbd9bd83d16e070273c1124367f17e04c741ba355d682f59eb3ca55cbbd0a3`; Batch CIA 3DS Decryptor `691d3ad364e511ff53e5204fc377d7cff2aa756650d1fd05a26a1404c9f1f065`.
 
 SHA-256 del ZIP: `e3343dd54e294e1546197a419f313b4775a6a7c59b9f0a3e0c0e5b2ff6c9464b`.
 
@@ -110,33 +112,42 @@ El CIA «piratelegit» del DLC USA, el de este nombre:
 
 `0004008C0019A200 Shin Megami Tensei IV_ Apocalypse (CTR-M-BG4E-00) (v0.1.0) (U).piratelegit.cia`
 
-| Dato | CIA cifrado (tal como viene) | CIA descifrado (al que se aplica el parche) |
+| Dato | CIA cifrado (tal como viene) | CIA descifrado con GodMode9 |
 |---|---|---|
 | Tamaño | 41.316.096 bytes | 41.316.096 bytes |
 | MD5 | `2382d6640178462ca04076377cab75b4` | `7d1db7a8e46288244704cc02e1a16c9c` |
 | SHA-256 | `a18a1c190301f204602395b415bf37b2b4bdcd5c05709bbcd46ef7316936db93` | `e8b758139c9ae1ab3c193f7e58de1abeffd552fa0b87670baacd7dc08c73b973` |
 
-Title ID `0004008C0019A200`, 32 contenidos + índice, TMD v16. Comprueba el MD5 antes de parchear: si no coincide, el XDELTA no se aplicará. Un CIA con otro ticket (por ejemplo, creado con GodMode9 a partir del DLC instalado en una consola), con menos contenidos o de otra región no sirve.
+Title ID `0004008C0019A200`, 32 contenidos + índice, TMD v16. Comprueba el MD5 del CIA cifrado antes de empezar: si no coincide, ningún parche se aplicará. Un CIA con otro ticket (por ejemplo, creado con GodMode9 a partir del DLC instalado en una consola), con menos contenidos o de otra región no sirve.
 
 ### Cómo descifrar el CIA
 
-Con [GodMode9](https://github.com/d0k3/GodMode9) en una consola con Luma3DS:
+Hay dos formas; cada una tiene su propio parche.
+
+**Opción A — GodMode9** (en una consola con Luma3DS), parche `…-godmode9.xdelta`:
 
 1. Copia el CIA cifrado a la SD.
 2. En GodMode9, pulsa A sobre él → **CIA image options…** → **Decrypt file (SD output)**. El CIA descifrado queda en `/gm9/out/`.
 3. Cópialo al ordenador y comprueba que su MD5 es `7d1db7a8e46288244704cc02e1a16c9c`.
 
+**Opción B — [Batch CIA 3DS Decryptor Redux](https://github.com/xxmichibxx/Batch-CIA-3DS-Decryptor-Redux)** (Windows), parche `…-batch.xdelta`:
+
+1. Descifra el CIA con la herramienta; cuando pregunte si convertir a CCI, responde **No**.
+2. Usa el CIA `… DLC-decrypted.cia` que genera.
+
+Esta herramienta no descifra el CIA tal cual: lo vuelve a montar con makerom, que pone un ticket con datos aleatorios. Por eso **su MD5 cambia cada vez y no hay un MD5 que comprobar**. El parche `…-batch.xdelta` está hecho para ignorar esos datos: sirve para cualquier ejecución de la herramienta. Si el CIA no coincide en nada más, xdelta da un error en lugar de crear un CIA roto.
+
 Azahar no puede instalar un CIA cifrado sin las claves de tu consola: también para Azahar hace falta el CIA descifrado.
 
 ### Cómo aplicar e instalar
 
-1. Aplica el parche al CIA descifrado con [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher) o con:
+1. Aplica el parche que corresponda (GodMode9 o Batch) al CIA descifrado con [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher) o con:
 
 ```sh
-xdelta3 -d -s "Shin Megami Tensei IV Apocalypse DLC (USA).cia" shinivapoc-dlc-es-v1.2.xdelta "Shin Megami Tensei IV Apocalypse DLC (ES).cia"
+xdelta3 -d -s "Shin Megami Tensei IV Apocalypse DLC (USA).cia" shinivapoc-dlc-es-v1.3-godmode9.xdelta "Shin Megami Tensei IV Apocalypse DLC (ES).cia"
 ```
 
-2. El CIA resultante ocupa **61.107.968 bytes**; MD5 `c811390150c283e195fbd56612d076a3`, SHA-256 `347978f8a59e6e1cf626788d1ad6bece94b024f40130e06d7442eff215b3ea54`.
+2. Con cualquiera de los dos, el CIA resultante ocupa **61.107.968 bytes**; MD5 `c811390150c283e195fbd56612d076a3`, SHA-256 `347978f8a59e6e1cf626788d1ad6bece94b024f40130e06d7442eff215b3ea54`.
 3. **Consola:** cópialo a la SD e instálalo con [FBI](https://github.com/Steveice10/FBI); si tenías otra versión del DLC instalada, la sustituye. Luma3DS acepta CIA modificados.
 4. **Azahar:** **File → Install CIA…** y elige el CIA traducido.
 5. Inicia el juego con el parche del juego base. Al arrancar sale «Cargando contenido adicional» y el DLC queda disponible en la partida.
@@ -149,6 +160,7 @@ El menú **Contenido adic.** de la pantalla de título es la tienda de la eShop:
 - El CIA se reconstruye con hashes de TMD y NCCH correctos; sin cambios, la reconstrucción da un CIA idéntico al original. Cada archivo traducido se ha releído desde el CIA final, y el XDELTA se ha reaplicado y comparado byte a byte.
 - En **Azahar 2126.0**: el CIA se instala, el juego carga el contenido adicional sin errores y, en un estado guardado en la pantalla de título, la memoria contiene los datos traducidos de 96 archivos del DLC (misiones, objetos, datos de misión) y no los originales.
 - El CIA descifrado de referencia se ha obtenido con una herramienta propia y las claves de una consola, imitando a GodMode9. Sus 33 contenidos y su TMD coinciden byte a byte con un CIA descifrado anteriormente; el MD5 de la salida de GodMode9 no se ha comprobado en consola.
+- El parche para Batch CIA 3DS Decryptor se ha probado con los programas de la propia herramienta (v1.0.6.3): con varias ejecuciones, cada una con su ticket aleatorio, y con el CIA exacto de un usuario, todas dan el mismo CIA traducido que la opción de GodMode9.
 - **No se ha visto el texto del DLC en pantalla**: hace falta avanzar en la historia, y no se ha jugado hasta ahí. Tampoco se ha probado en consola física.
 - El vídeo del DLC se ha recomprimido como los de la 1.0 (audio PCM con muestras idénticas). Su cartel final dura unos 2,4 segundos y el subtítulo tapa los créditos ficticios de la parte inferior.
 
